@@ -8,7 +8,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN curl -sS https://getcomposer.org/installer \
+    | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /var/www/html
 

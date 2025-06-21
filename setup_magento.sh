@@ -8,7 +8,6 @@ if [ ! -d "$MAGENTO_DIR" ]; then
   mkdir "$MAGENTO_DIR"
 fi
 
-# Check for composer
 # Check for Composer
 if ! command -v composer >/dev/null 2>&1; then
   echo "Composer is required but not installed. Install Composer and rerun this script." >&2
