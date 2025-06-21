@@ -1,11 +1,20 @@
 FROM php:8.2-apache
 
 # Install system dependencies and PHP extensions required by Magento
-RUN apt-get update && \
-    apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev libzip-dev unzip git && \
-    docker-php-ext-configure gd --with-freetype --with-jpeg && \
-    docker-php-ext-install pdo_mysql gd intl bcmath opcache zip && \
-    rm -rf /var/lib/apt/lists/*
+RUN set -ex \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        libzip-dev \
+        libicu-dev \
+        unzip \
+        git \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql gd intl bcmath opcache zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 ENV COMPOSER_ALLOW_SUPERUSER=1

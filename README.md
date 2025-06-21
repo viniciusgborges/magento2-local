@@ -12,7 +12,7 @@ This repository contains a minimal setup script and Docker configuration for run
 
 1. Add your Magento authentication keys to `~/.composer/auth.json` as shown in [Magento docs](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/connect-auth.html).
 2. Run `./setup_magento.sh` to download Magento 2, deploy sample data and perform the initial installation. This step requires internet access.
-3. Start the containers with `docker compose up -d`.
+3. Build and start the containers with `docker compose up -d --build`.
 4. Access the storefront at `http://localhost` and the admin at `http://localhost/admin`.
 
 ## Files
