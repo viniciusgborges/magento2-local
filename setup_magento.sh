@@ -9,8 +9,15 @@ if [ ! -d "$MAGENTO_DIR" ]; then
 fi
 
 # Check for composer
+# Check for Composer
 if ! command -v composer >/dev/null 2>&1; then
   echo "Composer is required but not installed. Install Composer and rerun this script." >&2
+  exit 1
+fi
+
+# Check for Docker
+if ! command -v docker >/dev/null 2>&1; then
+  echo "Docker is required but not installed. Install Docker and rerun this script." >&2
   exit 1
 fi
 

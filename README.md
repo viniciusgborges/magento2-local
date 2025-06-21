@@ -1,9 +1,10 @@
 # Magento 2 Docker Setup
 
-This repository contains a minimal setup script and Docker configuration for running Magento 2 Open Source with sample data. These instructions assume you have Docker and Docker Compose installed and internet access to download Magento packages and container images.
+This repository contains a minimal setup script and Docker configuration for running Magento 2 Open Source with sample data. These instructions assume you have Composer, Docker and Docker Compose installed and internet access to download Magento packages and container images.
 
 ## Requirements
 
+- Composer
 - Docker & Docker Compose
 - Magento repository access keys (for Composer authentication)
 
