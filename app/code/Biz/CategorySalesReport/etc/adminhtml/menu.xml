@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/etc/menu.xsd">
+    <menu>
+        <add id="Biz_CategorySalesReport::report" title="Category Sales Report" module="Biz_CategorySalesReport" sortOrder="10" parent="Magento_Backend::reports" resource="Biz_CategorySalesReport::report"/>
+    </menu>
+</config>
