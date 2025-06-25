@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">category_sales_report_form.category_sales_report_form_data_source</item>
+            <item name="deps" xsi:type="string">category_sales_report_form.category_sales_report_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Category Sales Report</item>
+    </argument>
+    <dataSource name="category_sales_report_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Ui\Component\Form\DataProvider</argument>
+            <argument name="name" xsi:type="string">category_sales_report_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <field name="categories" sortOrder="10" formElement="multiselect">
+            <settings>
+                <label translate="true">Categories</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="from" sortOrder="20" formElement="date">
+            <settings>
+                <label translate="true">From</label>
+                <dataType>date</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="to" sortOrder="30" formElement="date">
+            <settings>
+                <label translate="true">To</label>
+                <dataType>date</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <button name="export" sortOrder="40" class="primary">
+            <settings>
+                <title translate="true">Export</title>
+            </settings>
+            <action type="submit">
+                <argument name="url" xsi:type="string">categorysalesreport/report/export</argument>
+            </action>
+        </button>
+    </fieldset>
+</form>
