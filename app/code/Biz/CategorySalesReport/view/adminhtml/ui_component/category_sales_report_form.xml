@@ -23,15 +23,6 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
             </settings>
-            <formElements>
-                <multiselect>
-                    <settings>
-                        <component>Magento_Catalog/js/components/category-select-tree</component>
-                        <filter_by_parent>true</filter_by_parent>
-                        <levels>2</levels>
-                    </settings>
-                </multiselect>
-            </formElements>
         </field>
         <field name="from" sortOrder="20" formElement="date">
             <settings>
@@ -53,7 +44,7 @@
         </field>
         <button name="export" sortOrder="40" class="primary">
             <settings>
-                <label translate="true">Export</label>
+                <title translate="true">Export</title>
             </settings>
             <action type="submit">
                 <argument name="url" xsi:type="string">categorysalesreport/report/export</argument>
